@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  
+  .background-image(
+    style={
+      'background-image': `url(${imageSrc})`
+    }
+  )
+  .blend
+  .text-container
+    h1= title
+    p #{answer}

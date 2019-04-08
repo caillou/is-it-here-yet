@@ -1,0 +1,50 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+
+.background-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center right;
+  background-size: cover;
+}
+.text-container {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 4vw;
+}
+
+.blend {
+  content: '';
+  background-color: rgb(210, 47, 38);
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h1, p {
+  /* mix-blend-mode: initial; */
+  font-size: 10vw;
+  position: relative;
+}
