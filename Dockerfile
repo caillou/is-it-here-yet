@@ -1,4 +1,5 @@
-FROM node:8
+FROM node:8-alpine
+RUN apk update && apk add imagemagick graphicsmagick
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci --only=production
