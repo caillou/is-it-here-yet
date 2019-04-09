@@ -16,16 +16,17 @@ router.get('/', function (req, res, next) {
     const latestImageName = list.sort().filter((fileName) => {
       return fileName.match(/\.jpg$/i)
     }).pop()
-    const optimizedImageName = path.join('optimized', latestImageName)
-    const imageSrc = `/${optimizedImageName}`
+
+    const imageSrc = `/${latestImageName}`
 
     const pathToLatestImage = path.join(
       process.env.STATIC_PATH,
       latestImageName
     )
+
     const pathToOptimizedImage = path.join(
-      process.env.STATIC_PATH,
-      optimizedImageName
+      require('../helpers/tmp-folder'),
+      latestImageName
     )
 
     const cb = function () {
