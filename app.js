@@ -15,7 +15,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
 if (process.env.STATIC_PATH) {
-  app.use(express.static(process.env.STATIC_PATH))
+  app.use(express.static(process.env.STATIC_PATH, {
+    immutable: true,
+    maxAge: 1000 * 60 * 60 * 24 * 7 // a week
+  }))
 }
 
 app.use('/', indexRouter)
